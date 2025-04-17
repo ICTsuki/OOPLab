@@ -1,4 +1,4 @@
-package hust.soict.ict.aims.disc.track;
+package hust.soict.ict.aims.track;
 
 public class Track {
     private String title;
