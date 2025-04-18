@@ -1,9 +1,9 @@
-package hust.soict.ict.aims.test.store;
+package lab03.hust.soict.ict.aims.test.store;
 
-import hust.soict.ict.aims.media.Book;
-import hust.soict.ict.aims.media.CompactDisc;
-import hust.soict.ict.aims.media.DigitalVideoDisc;
-import hust.soict.ict.aims.media.Media;
+import lab03.hust.soict.ict.aims.media.Book;
+import lab03.hust.soict.ict.aims.media.CompactDisc;
+import lab03.hust.soict.ict.aims.media.DigitalVideoDisc;
+import lab03.hust.soict.ict.aims.media.Media;
 
 import java.util.ArrayList;
 import java.util.List;

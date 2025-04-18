@@ -1,7 +1,7 @@
-package hust.soict.ict.aims.media;
+package lab03.hust.soict.ict.aims.media;
 
-import hust.soict.ict.aims.media.sort.MediaComparatorByCostTitle;
-import hust.soict.ict.aims.media.sort.MediaComparatorByTitleCost;
+import lab03.hust.soict.ict.aims.media.sort.MediaComparatorByCostTitle;
+import lab03.hust.soict.ict.aims.media.sort.MediaComparatorByTitleCost;
 
 import java.util.Comparator;
 

@@ -1,8 +1,6 @@
-package hust.soict.ict.aims;
+package lab03.hust.soict.ict.aims;
 
-import hust.soict.ict.aims.cart.Cart;
-import hust.soict.ict.aims.media.DigitalVideoDisc;
-import hust.soict.ict.aims.store.Store;
+import lab03.hust.soict.ict.aims.store.Store;
 
 public class Aims {
     public static void main(String[] args){

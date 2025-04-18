@@ -1,6 +1,6 @@
-package hust.soict.ict.aims.track;
+package lab03.hust.soict.ict.aims.track;
 
-import hust.soict.ict.aims.media.Playable;
+import lab03.hust.soict.ict.aims.media.Playable;
 
 public class Track implements Playable {
     private String title;
