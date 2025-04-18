@@ -28,4 +28,8 @@ public class Disc extends Media {
         return director;
     }
 
+    public String toString() {
+        return super.toString();
+    }
+
 }

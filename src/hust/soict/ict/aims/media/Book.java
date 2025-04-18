@@ -36,4 +36,19 @@ public class Book extends Media{
             System.out.println("Author deleted or not exist!!");
         }
     }
+
+    public String toString() {
+        StringBuilder stringBD = new StringBuilder();
+        stringBD.append(this.id);
+        stringBD.append(". BOOK - ");
+        stringBD.append(super.toString());
+        for(String author : authors) {
+            stringBD.append(" - ");
+            stringBD.append(author);
+        }
+        stringBD.append(": ");
+        stringBD.append(this.cost);
+        stringBD.append("$");
+        return stringBD.toString();
+    }
 }

@@ -11,7 +11,7 @@ public abstract class Media {
     protected String title;
     protected String category;
     protected float cost;
-    public static int nbMedia;
+    public static int nbMedia = 0;
 
     public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
     public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
@@ -76,5 +76,13 @@ public abstract class Media {
         return this.title.equals(((Media) obj).getTitle());
     }
 
-
+    public String toString() {
+        StringBuilder stringBD = new StringBuilder();
+        String outputString;
+        stringBD.append(this.title);
+        stringBD.append(" - ");
+        stringBD.append(this.category);
+        outputString = stringBD.toString();
+        return outputString;
+    }
 }

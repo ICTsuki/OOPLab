@@ -54,4 +54,36 @@ public class Cart {
     public void sortByCost() {
         itemsOrdered.sort(Media.COMPARE_BY_COST_TITLE);
     }
+
+    public void printCart() {
+        System.out.println("******************************CART******************************");
+        System.out.println("Ordered Items:");
+        for(Media item : itemsOrdered) {
+            System.out.println(item.toString());
+        }
+        System.out.println("Total cost: " + totalCost());
+        System.out.println("****************************************************************");
+    }
+
+    public void searchByID(int id) {
+        for(Media item : itemsOrdered) {
+            if(item.getId() == id) {
+                item.toString();
+            }
+            else {
+                System.out.println("Item not found!");
+            }
+        }
+    }
+
+    public void searchByTitle(String title) {
+        for(Media item : itemsOrdered) {
+            if(item.getTitle().equals(title)) {
+                item.toString();
+            }
+            else {
+                System.out.println("Item not found!");
+            }
+        }
+    }
 }

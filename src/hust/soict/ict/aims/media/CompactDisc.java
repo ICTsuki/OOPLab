@@ -68,4 +68,19 @@ public class CompactDisc extends Disc implements Playable{
             track.play();
         }
     }
+
+    public String toString() {
+        StringBuilder stringBD = new StringBuilder();
+        stringBD.append(this.id);
+        stringBD.append(". CD - ");
+        stringBD.append(super.toString());
+        stringBD.append(" - ");
+        stringBD.append(this.artist);
+        stringBD.append(" - ");
+        stringBD.append(getLength());
+        stringBD.append(": ");
+        stringBD.append(this.cost);
+        stringBD.append("$");
+        return stringBD.toString();
+    }
 }
