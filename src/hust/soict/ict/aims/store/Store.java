@@ -15,7 +15,7 @@ public class Store {
     public void addMedia(Media media) {
         if(!itemInStore.contains(media)) {
             itemInStore.add(media);
-            System.out.println("Added");
+            System.out.println("Added: " + media.toString());
         }
         else {
             System.out.println(media.getTitle() + "is already in the store!");
@@ -32,7 +32,21 @@ public class Store {
         }
         else {
             itemInStore.remove(media);
-            System.out.println("Item deleted!");
+            System.out.println("Item deleted: " + media.toString());
+            int i = 1;
+            for(Media item : itemInStore) {
+                item.setId(i);
+                i++;
+            }
         }
+    }
+
+    public void printStore() {
+        System.out.println("******************************CART******************************");
+        System.out.println("Items:");
+        for(Media item : itemInStore) {
+            System.out.println(item.toString());
+        }
+        System.out.println("****************************************************************");
     }
 }
