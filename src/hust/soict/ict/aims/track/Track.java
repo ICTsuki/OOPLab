@@ -1,15 +1,20 @@
 package hust.soict.ict.aims.track;
 
-public class Track {
+import hust.soict.ict.aims.media.Playable;
+
+public class Track implements Playable {
     private String title;
     private int length;
 
     public Track() {
         super();
     }
-    public Track(String tile, int length) {
+    public Track(String title) {
         this();
-        this.title = tile;
+        this.title = title;
+    }
+    public Track(String tile, int length) {
+        this(tile);
         this.length = length;
     }
 
@@ -18,5 +23,15 @@ public class Track {
     }
     public int getLength() {
         return length;
+    }
+
+    public void play() {
+        System.out.println("Playing DVD: " + this.getTitle());
+        System.out.println("DVD length: " + this.getLength());
+    }
+
+    public boolean equals(Object obj) {
+        return this.length == ((Track) obj).getLength()
+               && this.title.equals(((Track) obj).getTitle());
     }
 }

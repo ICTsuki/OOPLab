@@ -1,5 +1,11 @@
 package hust.soict.ict.aims.media;
 
+import hust.soict.ict.aims.media.sort.MediaComparatorByCostTitle;
+import hust.soict.ict.aims.media.sort.MediaComparatorByTitleCost;
+
+import java.util.Collections;
+import java.util.Comparator;
+
 public abstract class Media {
     protected int id;
     protected String title;
@@ -7,6 +13,27 @@ public abstract class Media {
     protected float cost;
     public static int nbMedia;
 
+    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
+    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
+
+    public Media(String title) {
+        this();
+        this.title = title;
+        nbMedia++;
+        this.id = nbMedia;
+    }
+    public Media(String title, String category) {
+        this(title);
+        this.category = category;
+        nbMedia++;
+        this.id = nbMedia;
+    }
+    public Media(String title, String category, float cost) {
+        this(title, category);
+        this.cost = cost;
+        nbMedia++;
+        this.id = nbMedia;
+    }
 
     public int getId() {
         return id;
@@ -44,22 +71,10 @@ public abstract class Media {
         super();
     }
 
-    public Media(String title) {
-        this();
-        this.title = title;
-        nbMedia++;
-        this.id = nbMedia;
+
+    public boolean equals(Object obj) {
+        return this.title.equals(((Media) obj).getTitle());
     }
-    public Media(String title, String category) {
-        this(title);
-        this.category = category;
-        nbMedia++;
-        this.id = nbMedia;
-    }
-    public Media(String title, String category, float cost) {
-        this(title, category);
-        this.cost = cost;
-        nbMedia++;
-        this.id = nbMedia;
-    }
+
+
 }
