@@ -1,4 +1,4 @@
-package hust.soict.ict.aims.media;
+package lab03.hust.soict.ict.aims.media;
 
 public interface Playable {
     public void play();

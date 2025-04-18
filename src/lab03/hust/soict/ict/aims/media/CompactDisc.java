@@ -1,6 +1,6 @@
-package hust.soict.ict.aims.media;
+package lab03.hust.soict.ict.aims.media;
 
-import hust.soict.ict.aims.track.Track;
+import lab03.hust.soict.ict.aims.track.Track;
 
 import java.util.ArrayList;
 import java.util.List;

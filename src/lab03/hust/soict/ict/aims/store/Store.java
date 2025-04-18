@@ -1,6 +1,6 @@
-package hust.soict.ict.aims.store;
+package lab03.hust.soict.ict.aims.store;
 
-import hust.soict.ict.aims.media.Media;
+import lab03.hust.soict.ict.aims.media.Media;
 
 import java.util.ArrayList;
 import java.util.List;
