@@ -20,6 +20,10 @@ public class Cart {
         return total;
     }
 
+    public List<Media> getItemsOrdered() {
+        return itemsOrdered;
+    }
+
     public void addMedia(Media media) {
         if(itemsOrdered.size() == MAX_NUMBERS_ORDERED) {
             System.out.println("Maximum item!");
@@ -75,23 +79,29 @@ public class Cart {
         System.out.println("****************************************************************");
     }
 
-    public void searchByID(int id) {
+    public Media searchByID(int id) {
         for(Media item : itemsOrdered) {
             if(item.getId() == id) {
                 System.out.println(item.toString());
-                return;
+                return item;
             }
         }
         System.out.println("Item not found!");
+        return null;
     }
 
-    public void searchByTitle(String title) {
+    public Media searchByTitle(String title) {
         for(Media item : itemsOrdered) {
             if(item.getTitle().equals(title)) {
                 System.out.println(item.toString());
-                return;
+                return item;
             }
         }
         System.out.println("Item not found!");
+        return null;
+    }
+
+    public void clear() {
+        itemsOrdered.clear();
     }
 }

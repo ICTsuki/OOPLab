@@ -42,11 +42,22 @@ public class Store {
     }
 
     public void printStore() {
-        System.out.println("******************************CART******************************");
+        System.out.println("******************************STORE******************************");
         System.out.println("Items:");
         for(Media item : itemInStore) {
             System.out.println(item.toString());
         }
         System.out.println("****************************************************************");
+    }
+
+    public Media searchByTitle(String title) {
+        for(Media item : itemInStore) {
+            if(item.getTitle().equals(title)) {
+                System.out.println(item.toString());
+                return item;
+            }
+        }
+        System.out.println("Item not found!");
+        return null;
     }
 }

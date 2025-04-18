@@ -34,13 +34,6 @@ public class StoreTest {
         for(Media m : mediae) {
             System.out.println(m.toString());
         }
-
-
-
-
-
-
-
     }
 
 }

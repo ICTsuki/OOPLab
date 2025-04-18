@@ -20,6 +20,10 @@ public class Book extends Media{
         super(title, category, cost);
     }
 
+    public List<String> getAuthors() {
+        return authors;
+    }
+
     public void addAuthor(String authorName) {
         if(!authors.contains(authorName)) {
             authors.add(authorName);
