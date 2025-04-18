@@ -1,15 +1,13 @@
 package hust.soict.ict.aims.cart;
 
-import hust.soict.ict.aims.media.DigitalVideoDisc;
 import hust.soict.ict.aims.media.Media;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
-    private List<Media> itemsOrdered = new ArrayList<>();
+    private final List<Media> itemsOrdered = new ArrayList<>();
 
     public Cart() {
         super();
@@ -23,6 +21,10 @@ public class Cart {
     }
 
     public void addMedia(Media media) {
+        if(itemsOrdered.size() == MAX_NUMBERS_ORDERED) {
+            System.out.println("Maximum item!");
+            return;
+        }
         if(!itemsOrdered.contains(media)) {
             itemsOrdered.add(media);
             System.out.println("Item added");
@@ -34,11 +36,19 @@ public class Cart {
 
     public void addMedia(Media ... medias) {
         for(Media media : medias) {
+            if(itemsOrdered.size() == MAX_NUMBERS_ORDERED) {
+                System.out.println("Maximum item!");
+                return;
+            }
             addMedia(media);
         }
     }
 
     public void removeMedia(Media media) {
+        if(itemsOrdered.isEmpty()) {
+            System.out.println("No item to remove!");
+            return;
+        }
         if(!itemsOrdered.contains(media)) {
             System.out.println("Failed!\nItem already removed or doesn't exist");
         }
@@ -68,7 +78,7 @@ public class Cart {
     public void searchByID(int id) {
         for(Media item : itemsOrdered) {
             if(item.getId() == id) {
-                item.toString();
+                System.out.println(item.toString());
             }
             else {
                 System.out.println("Item not found!");
@@ -79,7 +89,7 @@ public class Cart {
     public void searchByTitle(String title) {
         for(Media item : itemsOrdered) {
             if(item.getTitle().equals(title)) {
-                item.toString();
+                System.out.println(item.toString());
             }
             else {
                 System.out.println("Item not found!");

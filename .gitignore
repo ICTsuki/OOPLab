@@ -4,8 +4,7 @@ out/
 !**/src/test/**/out/
 .idea/
 *.iml
-Design/
-Requirement/
+*.lock
 
 ### Eclipse ###
 .apt_generated

@@ -3,7 +3,6 @@ package hust.soict.ict.aims.media;
 import hust.soict.ict.aims.media.sort.MediaComparatorByCostTitle;
 import hust.soict.ict.aims.media.sort.MediaComparatorByTitleCost;
 
-import java.util.Collections;
 import java.util.Comparator;
 
 public abstract class Media {
@@ -16,6 +15,10 @@ public abstract class Media {
     public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
     public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
 
+
+    public Media() {
+        super();
+    }
     public Media(String title) {
         this();
         this.title = title;
@@ -67,9 +70,7 @@ public abstract class Media {
         this.cost = cost;
     }
 
-    public Media() {
-        super();
-    }
+
 
 
     public boolean equals(Object obj) {

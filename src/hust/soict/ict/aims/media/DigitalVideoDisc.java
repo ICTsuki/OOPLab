@@ -18,12 +18,6 @@ public class DigitalVideoDisc extends Disc implements Playable{
         super(title, category, cost, director);
     }
 
-    public void itemDisplay() {
-        System.out.println("    \nTitle: " + title + "\nCategory: " + category + "\nDirector: " + director
-                            + "\nLength: " + length + "\nCost: " + cost + "\n");
-
-    }
-
     public void play() {
         System.out.println("Playing DVD: " + this.getTitle());
         System.out.println("DVD length: " + this.getLength());
