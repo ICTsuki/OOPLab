@@ -79,21 +79,19 @@ public class Cart {
         for(Media item : itemsOrdered) {
             if(item.getId() == id) {
                 System.out.println(item.toString());
-            }
-            else {
-                System.out.println("Item not found!");
+                return;
             }
         }
+        System.out.println("Item not found!");
     }
 
     public void searchByTitle(String title) {
         for(Media item : itemsOrdered) {
             if(item.getTitle().equals(title)) {
                 System.out.println(item.toString());
-            }
-            else {
-                System.out.println("Item not found!");
+                return;
             }
         }
+        System.out.println("Item not found!");
     }
 }
