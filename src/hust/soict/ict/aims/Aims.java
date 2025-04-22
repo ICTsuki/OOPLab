@@ -1,9 +1,7 @@
 package hust.soict.ict.aims;
 
 import hust.soict.ict.aims.cart.Cart;
-import hust.soict.ict.aims.media.DigitalVideoDisc;
-import hust.soict.ict.aims.media.Media;
-import hust.soict.ict.aims.media.Playable;
+import hust.soict.ict.aims.media.*;
 import hust.soict.ict.aims.store.Store;
 
 import java.util.Scanner;
@@ -77,7 +75,7 @@ public class Aims {
                                 System.out.println("Enter title of media to play: ");
                                 title = sc.nextLine();
                                 media = store.searchByTitle(title);
-                                if (media != null && media instanceof Playable) {
+                                if (media instanceof Playable) {
                                     ((Playable) media).play();
                                 } else {
                                     System.out.println("Media cannot be played or not found.");

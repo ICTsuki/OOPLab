@@ -6,10 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Store {
-    private final List<Media> itemInStore = new ArrayList<>();
+    private final ArrayList<Media> itemInStore = new ArrayList<>();
 
     public Store() {
         super();
+    }
+
+    public ArrayList<Media> getItemInStore() {
+        return itemInStore;
     }
 
     public void addMedia(Media media) {
