@@ -7,11 +7,14 @@ import hust.soict.ict.aims.media.Media;
 import hust.soict.ict.aims.store.Store;
 
 import javax.swing.*;
+import javax.swing.text.View;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class StoreManagerScreen extends JFrame{
-    private Store store;
+    private final Store store;
 
     public StoreManagerScreen(Store store) {
         this.store = store;
@@ -36,9 +39,12 @@ public class StoreManagerScreen extends JFrame{
     }
 
     JMenuBar createMenuBar() {
+        MenuItemListener itemListener = new MenuItemListener();
         JMenu menu = new JMenu("Options");
 
-        menu.add(new JMenuItem("View Store"));
+        JMenuItem viewStoreMenuItem = new JMenuItem("View Store");
+        menu.add(viewStoreMenuItem);
+        viewStoreMenuItem.addActionListener(itemListener);
 
         JMenu smUpdateStore = new JMenu("Update Store");
         smUpdateStore.add(new JMenuItem("Add Book"));
@@ -88,5 +94,18 @@ public class StoreManagerScreen extends JFrame{
         store.addMedia(new DigitalVideoDisc("Titanic"));
         store.addMedia(new CompactDisc("The Matrix"));
         new StoreManagerScreen(store);
+    }
+
+    private class MenuItemListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String menuAction = e.getActionCommand();
+            if(menuAction.equals("View Store")) {
+                new ViewStoreScreen(store);
+            }
+            if(menuAction.equals("Add Book")) {
+                new AddBookScreen(store);
+            }
+        }
     }
 }
