@@ -1,5 +1,8 @@
 package hust.soict.ict.aims.screen.manager;
 
+import hust.soict.ict.aims.media.Book;
+import hust.soict.ict.aims.media.CompactDisc;
+import hust.soict.ict.aims.media.DigitalVideoDisc;
 import hust.soict.ict.aims.media.Media;
 import hust.soict.ict.aims.store.Store;
 
@@ -70,7 +73,7 @@ public class StoreManagerScreen extends JFrame{
         center.setLayout(new GridLayout(3, 3, 2, 2));
 
         ArrayList<Media> mediaInStore = store.getItemInStore();
-        for(int i = 0; i < 9; i++) {
+        for(int i = 0; i < mediaInStore.size(); i++) {
             MediaStore cell = new MediaStore(mediaInStore.get(i));
             center.add(cell);
         }
@@ -79,6 +82,10 @@ public class StoreManagerScreen extends JFrame{
     }
 
     public static void main(String[] args) {
-
+        Store store = new Store();
+        store.addMedia(new Book("Harry Potter"));
+        store.addMedia(new DigitalVideoDisc("Titanic"));
+        store.addMedia(new CompactDisc("The Matrix"));
+        new StoreManagerScreen(store);
     }
 }

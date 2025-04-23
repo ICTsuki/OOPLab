@@ -15,6 +15,9 @@ public class Store {
     public ArrayList<Media> getItemInStore() {
         return itemInStore;
     }
+    public int getNumberOfItemInStore() {
+        return itemInStore.size();
+    }
 
     public void addMedia(Media media) {
         if(!itemInStore.contains(media)) {
