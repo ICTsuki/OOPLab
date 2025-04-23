@@ -22,9 +22,10 @@ public class StoreManagerScreen extends JFrame{
         cp.add(createCenter(), BorderLayout.CENTER);
 
         setTitle("Store");
-        cp.setSize(1024, 768);
+        setSize(1024, 768);
         setLocationRelativeTo(null);
-        cp.setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
     }
     JPanel createNorth() {
         JPanel north = new JPanel();
