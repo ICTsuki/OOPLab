@@ -6,9 +6,10 @@ import hust.soict.ict.aims.store.Store;
 import javax.swing.*;
 import java.awt.*;
 
-public class ViewStoreScreen extends PopUpScreen {
+public class ViewStoreScreen extends JFrame {
 
     public ViewStoreScreen(Store store) {
+        Container cp = getContentPane();
         cp.setLayout(new GridLayout(store.getNumberOfItemInStore(), 0));
 
         for(Media item : store.getItemInStore()) {
@@ -17,5 +18,8 @@ public class ViewStoreScreen extends PopUpScreen {
 
         setTitle("Store");
         setSize(600, 400);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setVisible(true);
     }
 }
