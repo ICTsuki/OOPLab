@@ -19,14 +19,15 @@ public class Store {
         return itemInStore.size();
     }
 
-    public void addMedia(Media media) {
+    public boolean addMedia(Media media) {
         if(!itemInStore.contains(media)) {
             itemInStore.add(media);
             System.out.println("Added: " + media.toString());
+            return true;
         }
-        else {
-            System.out.println(media.getTitle() + "is already in the store!");
-        }
+
+        System.out.println(media.getTitle() + "is already in the store!");
+        return false;
     }
     public void addMedia(Media ... medias) {
         for(Media media : medias) {

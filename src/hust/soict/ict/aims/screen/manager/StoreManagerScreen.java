@@ -24,7 +24,7 @@ public class StoreManagerScreen extends JFrame{
         cp.add(createCenter(), BorderLayout.CENTER);
 
         setTitle("Store");
-        setSize(1024, 768);
+        setSize(800, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
@@ -46,9 +46,17 @@ public class StoreManagerScreen extends JFrame{
         viewStoreMenuItem.addActionListener(itemListener);
 
         JMenu smUpdateStore = new JMenu("Update Store");
-        smUpdateStore.add(new JMenuItem("Add Book"));
-        smUpdateStore.add(new JMenuItem("Add DVD"));
-        smUpdateStore.add(new JMenuItem("Add CD"));
+        JMenuItem addBookItem = new JMenuItem("Add Book");
+        JMenuItem addDVDItem = new JMenuItem("Add DVD");
+        JMenuItem addCDItem = new JMenuItem("Add CD");
+        smUpdateStore.add(addBookItem);
+        smUpdateStore.add(addDVDItem);
+        smUpdateStore.add(addCDItem);
+
+        addBookItem.addActionListener(itemListener);
+        addCDItem.addActionListener(itemListener);
+        addDVDItem.addActionListener(itemListener);
+
         menu.add(smUpdateStore);
 
         JMenuBar menuBar = new JMenuBar();
@@ -99,11 +107,19 @@ public class StoreManagerScreen extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             String menuAction = e.getActionCommand();
-            if(menuAction.equals("View Store")) {
-                new ViewStoreScreen(store);
-            }
-            if(menuAction.equals("Add Book")) {
-                new AddBookScreen(store);
+            switch (menuAction) {
+                case "View Store":
+                    new ViewStoreScreen(store);
+                    break;
+                case "Add Book":
+                    new AddBookScreen(store);
+                    break;
+                case "Add CD":
+                    new AddCDScreen(store);
+                    break;
+                default:
+                    new AddDVDScreen(store);
+                    break;
             }
         }
     }

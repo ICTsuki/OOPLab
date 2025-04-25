@@ -1,17 +1,19 @@
 package hust.soict.ict.aims.screen.manager;
 
-import hust.soict.ict.aims.media.Book;
+import hust.soict.ict.aims.media.CompactDisc;
+import hust.soict.ict.aims.media.DigitalVideoDisc;
 import hust.soict.ict.aims.store.Store;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class AddBookScreen extends AddMediaScreen {
-    private JTextField authorField;
+public class AddDVDScreen extends AddMediaScreen{
 
-    public AddBookScreen(Store store) {
+    JTextField directorField;
+
+    public AddDVDScreen(Store store) {
         super(store);
-        setTitle("Add Book");
+        setTitle("Add DVD");
     }
 
     @Override
@@ -19,7 +21,7 @@ public class AddBookScreen extends AddMediaScreen {
         titleField = new JTextField();
         categoryField = new JTextField();
         costField = new JTextField();
-        authorField = new JTextField();
+        directorField = new JTextField();
         addButton = new JButton("Add");
 
         JPanel formPanel = new JPanel();
@@ -28,26 +30,25 @@ public class AddBookScreen extends AddMediaScreen {
         formPanel.add(createInputPanel("Title", titleField));
         formPanel.add(createInputPanel("Category", categoryField));
         formPanel.add(createInputPanel("Cost", costField));
-        formPanel.add(createInputPanel("Authors", authorField));
+        formPanel.add(createInputPanel("Director", directorField));
         formPanel.add(addButton);
 
         addButton.addActionListener(e -> {
-            Book book = new Book(
+            DigitalVideoDisc DVD = new DigitalVideoDisc(
                     titleField.getText(),
                     categoryField.getText(),
-                    Float.parseFloat(costField.getText())
+                    Float.parseFloat(costField.getText()),
+                    directorField.getText()
             );
-            for (String a : authorField.getText().split(",")) {
-                book.addAuthor(a.trim());
-            }
-            if(store.addMedia(book)) {
+
+            if(store.addMedia(DVD)) {
                 JOptionPane.showMessageDialog(this,
-                        "Added: " + book.getTitle(),
+                        "Added: " + DVD.getTitle(),
                         "Success", JOptionPane.INFORMATION_MESSAGE);
             }
             else {
                 JOptionPane.showMessageDialog(this,
-                        book.getTitle() + " has already in store",
+                        DVD.getTitle() + " has already in store",
                         "Failed", JOptionPane.INFORMATION_MESSAGE);
             }
         });
